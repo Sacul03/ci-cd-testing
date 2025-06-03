@@ -7,11 +7,20 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MessageServiceImpls implements MessageService {
+    Message inMessage = new Message();
+
     @Override
-    public String printMessage(String message) {
-        Message userMessage = new Message();
-        userMessage.setMessage(message);
-        System.out.println("New Message\n" + message);
-        return userMessage.getMessage();
+    public String printMessageServer(String message) {
+        inMessage.setMessage(message);
+        String newMessage = inMessage.getMessage();
+        System.out.println("New Message\n" + newMessage);
+        return newMessage;
+    }
+
+
+    // For Testing CI
+    @Override
+    public String printMessageClient() {
+        return inMessage.getMessage();
     }
 }

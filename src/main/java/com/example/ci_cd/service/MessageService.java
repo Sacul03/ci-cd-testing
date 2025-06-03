@@ -1,9 +1,12 @@
 package com.example.ci_cd.service;
 
+import com.example.ci_cd.model.Message;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
 
 public interface MessageService {
-    String printMessage(String message);
+    Message inMessage = new Message();
+    String printMessageServer(String message);
+    String printMessageClient();
 }
