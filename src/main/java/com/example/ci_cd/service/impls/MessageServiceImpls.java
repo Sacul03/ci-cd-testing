@@ -18,9 +18,9 @@ public class MessageServiceImpls implements MessageService {
     }
 
 
-    // For Testing CI
+    // For Testing CI/CD
     @Override
     public String printMessageClient() {
-        return inMessage.getMessage();
+        return "Your message is" + inMessage.getMessage();
     }
 }
